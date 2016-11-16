@@ -117,6 +117,7 @@ alias rn5='react-native run-ios --simulator="iPhone 5"'
 alias rn5s='react-native run-ios --simulator="iPhone 5s"'
 alias rn6='react-native run-ios'
 alias rn6s='react-native run-ios --simulator="iPhone 6s"'
+alias rna='react-native run-android'
 # ============
 
 # ======================================================================

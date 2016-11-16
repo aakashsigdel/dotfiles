@@ -2,27 +2,6 @@
   let g:jsx_ext_required = 0
 "}}}
 
-" vim-airline configuration {{{
-  set laststatus=2 "enable status line
-  let g:airline#extensions#tabline#enabled = 1 "enable powerline fonts 
-  let g:airline_powerline_fonts = 1 "enable powerline fonts
-  let g:airline#extensions#tagbar#enabled = 0 "speeds up the load time by disabling tagbar integration
-  let g:airline#extensions#tabline#fnamemod = ':.'
-  let g:airline#extensions#tabline#fnamecollapse = 1
-  let g:airline#extensions#tabline#buffer_nr_show = 1 "show buffer number in tabline
-  let g:airline#extensions#tabline#buffer_idx_mode = 1 "show buffer index on tabline
-  " maps for switching between buffers
-  nmap <leader>1 <Plug>AirlineSelectTab1
-  nmap <leader>2 <Plug>AirlineSelectTab2
-  nmap <leader>3 <Plug>AirlineSelectTab3
-  nmap <leader>4 <Plug>AirlineSelectTab4
-  nmap <leader>5 <Plug>AirlineSelectTab5
-  nmap <leader>6 <Plug>AirlineSelectTab6
-  nmap <leader>7 <Plug>AirlineSelectTab7
-  nmap <leader>8 <Plug>AirlineSelectTab8
-  nmap <leader>9 <Plug>AirlineSelectTab9
-"}}}
-
 " Emmet Options {{{
 " Enabling just for html and css
   let g:user_emmet_install_global = 1
@@ -70,32 +49,10 @@
   set diffopt+=vertical
 " }}}
 
-" syntastic Settings {{{
-  set statusline+=%#warningmsg#
-  set statusline+=%{SyntasticStatuslineFlag()}
-  set statusline+=%*
-
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_auto_loc_list = 1
-  let g:syntastic_check_on_wq = 0
-  let g:syntastic_javascript_checkers = ['standard']
-  let g:syntastic_mode_map = {
-        \ "mode": "passive" }
-" }}}
-
-" tern settings {{{
-  let g:tern_map_keys=1
-  let g:tern_show_argument_hints='on_hold'
-" }}}
-
 " snipmate settings {{{
   "to prevent clash with youcompleteme, change snippet trigger
   imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
   smap <C-J> <Plug>snipMateNextOrTrigger
 " }}}
-
-" YouCompeleteMe settings {{{
-  set completeopt-=preview
-"}}}
 
 " vim:foldmethod=marker:foldlevel=0

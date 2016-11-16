@@ -40,17 +40,17 @@ Plug 'honza/vim-snippets'
 " fugitive
 Plug 'tpope/vim-fugitive'
 
-" fzf async replacement of ctrlP
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" ctrlP
+Plug 'ctrlpvim/ctrlp.vim'
   
 " goyo distraction free coding
 Plug 'junegunn/goyo.vim'
 
 " youcompleteme
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 
 " tern for vim
-Plug 'marijnh/tern_for_vim', { 'build': { 'mac': 'npm install' } }
+" Plug 'marijnh/tern_for_vim', { 'build': { 'mac': 'npm install' } }
 
 " Ag for vim
 Plug 'rking/ag.vim'
@@ -74,7 +74,7 @@ Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-surround'
 
 " syntastic
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 
 " colors for vim
 Plug 'chriskempson/base16-vim'
