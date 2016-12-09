@@ -93,4 +93,7 @@ set gdefault
 " set trail to tabs
 set list listchars=tab:»·,trail:·
 
+" disable mouse
+set mouse=
+
 "}}}

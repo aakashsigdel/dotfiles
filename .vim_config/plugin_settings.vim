@@ -32,6 +32,9 @@
   " Don't jump to already open window. This is annoying if you are maintaining
   " several Tab workspaces and want to open two windows into the same file.
   let g:ctrlp_switch_buffer = 0
+
+  " find in buffer mapping
+  map <c-b> :CtrlPBuffer<CR>
 "}}}
 
 " NerdTree settings {{{
