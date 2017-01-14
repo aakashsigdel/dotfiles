@@ -41,21 +41,8 @@
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "}}}
 
-"vim-windowswap settings {{{
-  let g:windowswap_map_keys = 0 "prevent default bindings
-  nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
-  nnoremap <silent> <leader>pw :call WindowSwap#DoWindowSwap()<CR>
-  nnoremap <silent> <leader>ww :call WindowSwap#EasyWindowSwap()<CR>
-"}}}
-
 " fugitive.vim {{{
   set diffopt+=vertical
-" }}}
-
-" snipmate settings {{{
-  "to prevent clash with youcompleteme, change snippet trigger
-  imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
-  smap <C-J> <Plug>snipMateNextOrTrigger
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0

@@ -23,7 +23,7 @@ set undodir=$HOME/.vim/undo
 set colorcolumn=100
 
 " leader is comma
-let mapleader="," 
+let mapleader=","
 
 " set tab length to 4 columns
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
@@ -83,9 +83,13 @@ set timeoutlen=1000 ttimeoutlen=0
 setlocal spell spelllang=en_us
 
 " status bar
-set statusline=%F%m%r%h%w\  "fullpath and status modified sign
+" set statusline=%F%m%r%h%w\  "fullpath and status modified sign
+set statusline=%f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)
 set statusline+=\ %y "filetype
 set statusline+=\ %{fugitive#statusline()}
+set statusline+=%= "change to right-alignment
+set statusline+=%3p%%
+set statusline+=\ 
 
 " assume the /g flag on :s substitutions to replace all matches in a line
 set gdefault

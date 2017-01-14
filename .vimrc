@@ -15,10 +15,6 @@ Plug 'pangloss/vim-javascript'
 " jsx indentation and highlight
 Plug 'mxw/vim-jsx'
 
-" vim-airline
-" Plug 'bling/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-
 " highlight ending html tag when pointing to the start
 Plug 'gregsexton/MatchTag'
 
@@ -31,26 +27,11 @@ Plug 'mattn/emmet-vim'
 " Seamless switch between vim and tmux splits
 Plug 'christoomey/vim-tmux-navigator'
 
-" SnipMate
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
-
 " fugitive
 Plug 'tpope/vim-fugitive'
 
 " ctrlP
 Plug 'ctrlpvim/ctrlp.vim'
-  
-" goyo distraction free coding
-Plug 'junegunn/goyo.vim'
-
-" youcompleteme
-" Plug 'Valloric/YouCompleteMe'
-
-" tern for vim
-" Plug 'marijnh/tern_for_vim', { 'build': { 'mac': 'npm install' } }
 
 " Ag for vim
 Plug 'rking/ag.vim'
@@ -61,20 +42,11 @@ Plug 'tomtom/tcomment_vim'
 " smooth scroll Plug
 Plug 'terryma/vim-smooth-scroll'
 
-" VIM Hard mode disable all micro movment and bunch of other stuffs
-" Plug 'wikitopian/hardmode'
-
-" HTML5 Plug
-" Plug 'othree/html5.vim'
-
 " matchit
 Plug 'tmhedberg/matchit'
 
 " vim surround
 Plug 'tpope/vim-surround'
-
-" syntastic
-" Plug 'scrooloose/syntastic'
 
 " colors for vim
 Plug 'chriskempson/base16-vim'
