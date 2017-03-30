@@ -10,7 +10,7 @@ Plug 'cohama/lexima.vim'
 
 " javascript Plugs
 Plug 'pangloss/vim-javascript'
-" Plug 'othree/yajs.vim'
+Plug 'othree/yajs.vim'
 
 " jsx indentation and highlight
 Plug 'mxw/vim-jsx'
@@ -47,6 +47,9 @@ Plug 'tmhedberg/matchit'
 
 " vim surround
 Plug 'tpope/vim-surround'
+
+" vim-xcode
+Plug 'gfontenot/vim-xcode'
 
 " colors for vim
 Plug 'chriskempson/base16-vim'

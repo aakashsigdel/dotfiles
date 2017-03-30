@@ -100,4 +100,7 @@ set list listchars=tab:»·,trail:·
 " disable mouse
 set mouse=
 
+" disable swp files
+set noswapfile
+
 "}}}
