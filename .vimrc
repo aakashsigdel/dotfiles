@@ -9,11 +9,26 @@ call plug#begin('~/.vim/plugged')
 Plug 'cohama/lexima.vim'
 
 " javascript Plugs
-Plug 'pangloss/vim-javascript'
-Plug 'othree/yajs.vim'
+" Plug 'pangloss/vim-javascript'
+" Plug 'othree/yajs.vim'
+
+" auto complete
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'runoshun/tscompletejob'
+Plug 'prabirshrestha/asyncomplete-tscompletejob.vim'
+
+" typescript
+" Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
 
 " jsx indentation and highlight
 Plug 'mxw/vim-jsx'
+
+" plugin for prettier js
+Plug 'sbdchd/neoformat'
+" Plug 'prettier/vim-prettier', {
+"     \ 'do': 'npm install',
+"     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 
 " highlight ending html tag when pointing to the start
 Plug 'gregsexton/MatchTag'

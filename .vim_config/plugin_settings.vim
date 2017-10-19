@@ -45,4 +45,50 @@
   set diffopt+=vertical
 " }}}
 
+" neoformat {{{
+  augroup fmt
+    autocmd!
+    autocmd BufWritePre *.tsx undojoin | Neoformat
+  augroup END
+  let g:neoformat_typescript_prettier = {
+              \ 'exe': 'prettier',
+              \ 'args': ['--parser babylon', '--single-quote', '--trailing-comma none'],
+              \ 'stdin': 1,
+              \ }
+
+  let g:neoformat_enabled_typescript = ['prettier']
+"}}}
+
+" prettier settings {{{
+  " let g:prettier#exec_cmd_async = 1
+  " let g:prettier#autoformat = 0
+  " autocmd BufWritePre *.js,*.tsx,*.css,*.scss,*.less PrettierAsync
+"}}}
+
+" asyncompelete {{{
+  set completeopt-=preview
+
+  call asyncomplete#register_source(asyncomplete#sources#tscompletejob#get_source_options({
+        \ 'name': 'tscompletejob',
+        \ 'whitelist': ['typescript'],
+        \ 'completor': function('asyncomplete#sources#tscompletejob#completor'),
+        \ }))
+  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+
+  let g:asyncomplete_auto_popup = 0
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+  endfunction
+
+  inoremap <silent><expr> <TAB>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ asyncomplete#force_refresh()
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+"}}}
+
 " vim:foldmethod=marker:foldlevel=0

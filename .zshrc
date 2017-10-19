@@ -7,7 +7,7 @@ export ZSH=/Users/aakash/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="mh_aakash"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -90,7 +90,7 @@ source $ZSH/oh-my-zsh.sh
 # vim aliases
 # ============
 alias vi="nvim"
-alias vim="nvim"
+# alias vim="nvim"
 # ============
 
 # ============
@@ -108,15 +108,13 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 alias lh="ls -d .*"
 alias ip="ifconfig | grep 192"
 alias mux="tmuxinator"
+alias fh-dump="MONGO_R_PASSWORD=Yp42hveNU95n5GsC bin/dump_data_graph.rb production development"
 # ============
 
 # ============
 # react-native aliases
 # ============
-alias rn5='react-native run-ios --simulator="iPhone 5"'
-alias rn5s='react-native run-ios --simulator="iPhone 5s"'
 alias rn6='react-native run-ios'
-alias rn6s='react-native run-ios --simulator="iPhone 6s"'
 alias rna='react-native run-android'
 # ============
 
@@ -132,15 +130,24 @@ KEYTIMEOUT=1
 
 source ~/.bin/tmuxinator.zsh
 export EDITOR=nvim
-export ANDROID_HOME=/usr/local/opt/android-sdk
+export ANDROID_HOME=${HOME}/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 # ctrl + r in vim mode in shell
 bindkey '^r' history-incremental-search-backward
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 export NVM_DIR="/Users/aakash/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# load rbenv
-eval "$(rbenv init -)"
+# completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# fastlane
+export PATH="$HOME/.fastlane/bin:$PATH"
+
+
+#initialize Z (https://github.com/rupa/z) 
+. ~/z.sh 
+
+export PATH=/usr/local/mysql/bin:$PATH

@@ -90,6 +90,7 @@ set statusline+=\ %{fugitive#statusline()}
 set statusline+=%= "change to right-alignment
 set statusline+=%3p%%
 set statusline+=\ 
+set laststatus=2
 
 " assume the /g flag on :s substitutions to replace all matches in a line
 set gdefault
@@ -102,5 +103,8 @@ set mouse=
 
 " disable swp files
 set noswapfile
+
+" incremental search (search as you type)
+set incsearch
 
 "}}}
