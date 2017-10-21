@@ -1,8 +1,3 @@
-" Set Mappings {{{
-" " navigate between multiplelines that don't have \n
-" noremap j gj
-" noremap k gk
-
 " turn off searh highlight
 nnoremap <leader>n :nohlsearch<CR>
 
@@ -37,5 +32,3 @@ noremap <leader>gs :Gstatus<CR>
 
 " fix for iterm under mac
 nnoremap <BS> :TmuxNavigateLeft<CR>
-
-"}}}
