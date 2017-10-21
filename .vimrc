@@ -47,6 +47,12 @@ Plug 'tmhedberg/matchit'
 " vim surround
 Plug 'tpope/vim-surround'
 
+" vim ale
+Plug 'w0rp/ale'
+
+" vim tsuquyomi
+Plug 'Quramy/tsuquyomi'
+
 " colors for vim
 Plug 'chriskempson/base16-vim'
 Plug 'nemesit/vim-colors-fukurokujopro'
