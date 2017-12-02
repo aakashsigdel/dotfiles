@@ -12,6 +12,9 @@ Plug 'cohama/lexima.vim'
 " Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 
+" lightline
+Plug 'itchyny/lightline.vim'
+
 " jsx indentation and highlight
 Plug 'mxw/vim-jsx'
 

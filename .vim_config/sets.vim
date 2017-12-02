@@ -84,14 +84,13 @@ set timeoutlen=1000 ttimeoutlen=0
 setlocal spell spelllang=en_us
 
 " status bar
-" set statusline=%F%m%r%h%w\  "fullpath and status modified sign
-set statusline=%f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)
-set statusline+=\ %y "filetype
-set statusline+=\ %{fugitive#statusline()}
-set statusline+=%= "change to right-alignment
-set statusline+=%3p%%
-set statusline+=\ 
-set laststatus=2
+" set statusline=%f\ %h%w%m%r\ %=%(%l,%c%V\ %=\ %P%)
+" set statusline+=\ %y "filetype
+" set statusline+=\ %{fugitive#statusline()}
+" set statusline+=%= "change to right-alignment
+" set statusline+=%3p%%
+" set statusline+=\ 
+" set laststatus=2
 
 " assume the /g flag on :s substitutions to replace all matches in a line
 set gdefault
@@ -107,5 +106,12 @@ set noswapfile
 
 " incremental search (search as you type)
 set incsearch
+
+" for some wierd reason key I type is being shwon in status bar
+" this is for disable that
+set noshowcmd
+
+" remove mode from statusbar
+set noshowmode
 
 "}}}
