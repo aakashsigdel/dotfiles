@@ -1,3 +1,4 @@
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " Set VIM Options {{{
 " mode line tells vim to setting for this file only
 " and equals to 1 tells vim to check last line for the settings

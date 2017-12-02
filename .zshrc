@@ -27,7 +27,7 @@ source $ZSH/oh-my-zsh.sh
 # vim aliases
 # ============
 alias vi="nvim"
-# alias vim="nvim"
+alias vim="nvim"
 # ============
 
 # ============
@@ -54,6 +54,9 @@ alias fh-dump="MONGO_R_PASSWORD=Yp42hveNU95n5GsC bin/dump_data_graph.rb producti
 alias rn6='react-native run-ios'
 alias rna='react-native run-android'
 # ============
+
+#==== hosting Dir ===
+alias hostDir='ip && python -m SimpleHTTPServer'
 
 # ======================================================================
 # ===================     ALIASES-END     ==============================
@@ -88,3 +91,5 @@ export PATH="$HOME/.fastlane/bin:$PATH"
 . ~/z.sh 
 
 export PATH=/usr/local/mysql/bin:$PATH
+
+eval $(thefuck --alias)

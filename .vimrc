@@ -9,7 +9,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'cohama/lexima.vim'
 
 " typescript
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 
 " jsx indentation and highlight
 Plug 'mxw/vim-jsx'
@@ -53,15 +54,27 @@ Plug 'w0rp/ale'
 " vim tsuquyomi
 Plug 'Quramy/tsuquyomi'
 
+" vimproc
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+
+" deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" nvim-typescript
+Plug 'mhartington/nvim-typescript'
+
 " colors for vim
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
 Plug 'nemesit/vim-colors-fukurokujopro'
+" Plug 'morhetz/gruvbox'
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+" Plug 'kristijanhusak/vim-hybrid-material'
+" Plug 'ajh17/Spacegray.vim'
+" Plug 'NLKNguyen/papercolor-theme'
+" Plug 'w0ng/vim-hybrid'
+" Plug 'nightsense/vimspectr'
 Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
-Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'ajh17/Spacegray.vim'
-Plug 'NLKNguyen/papercolor-theme'
 
 " --------------------------------------------------------------
 call plug#end()
