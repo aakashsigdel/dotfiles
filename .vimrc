@@ -36,6 +36,10 @@ Plug 'tpope/vim-fugitive'
 " ctrlP
 Plug 'ctrlpvim/ctrlp.vim'
 
+" fzf
+" Plug '/usr/local/opt/fzf'
+" Plug 'junegunn/fzf.vim'
+
 " Ag for vim
 Plug 'rking/ag.vim'
 

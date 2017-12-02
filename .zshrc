@@ -93,3 +93,5 @@ export PATH="$HOME/.fastlane/bin:$PATH"
 export PATH=/usr/local/mysql/bin:$PATH
 
 eval $(thefuck --alias)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
