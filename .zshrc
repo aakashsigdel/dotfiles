@@ -1,7 +1,7 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/aakash/.oh-my-zsh
+export ZSH=/Users/aakashsigdel/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -26,8 +26,8 @@ source $ZSH/oh-my-zsh.sh
 # ============
 # vim aliases
 # ============
-alias vi="nvim"
-alias vim="nvim"
+alias vi="vim"
+# alias vim="nvim"
 # ============
 
 # ============
@@ -68,8 +68,8 @@ set -o vi
 # 10ms timeout for key sequences
 KEYTIMEOUT=1
 
-source ~/.bin/tmuxinator.zsh
-export EDITOR=nvim
+# source ~/.bin/tmuxinator.zsh
+export EDITOR=vim
 export ANDROID_HOME=${HOME}/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
@@ -77,7 +77,7 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 # ctrl + r in vim mode in shell
 bindkey '^r' history-incremental-search-backward
 
-export NVM_DIR="/Users/aakash/.nvm"
+export NVM_DIR="/Users/aakashsigdel/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # completions
@@ -95,3 +95,4 @@ export PATH=/usr/local/mysql/bin:$PATH
 eval $(thefuck --alias)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export NPM_TOKEN=f802d406-b3b7-4d1c-add5-61c1a4cc8eb3
