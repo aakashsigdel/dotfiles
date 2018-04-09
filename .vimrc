@@ -64,12 +64,6 @@ Plug 'Quramy/tsuquyomi'
 " vimproc
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
-" deoplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-" nvim-typescript
-Plug 'mhartington/nvim-typescript'
-
 " colors for vim
 " Plug 'chriskempson/base16-vim'
 Plug 'nemesit/vim-colors-fukurokujopro'
