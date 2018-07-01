@@ -36,18 +36,11 @@ Plug 'tpope/vim-fugitive'
 " ctrlP
 Plug 'ctrlpvim/ctrlp.vim'
 
-" fzf
-" Plug '/usr/local/opt/fzf'
-" Plug 'junegunn/fzf.vim'
-
 " Ag for vim
 Plug 'rking/ag.vim'
 
 " tcomment for vim
 Plug 'tomtom/tcomment_vim'
-
-" smooth scroll Plug
-Plug 'terryma/vim-smooth-scroll'
 
 " matchit
 Plug 'tmhedberg/matchit'
@@ -58,11 +51,8 @@ Plug 'tpope/vim-surround'
 " vim ale
 Plug 'w0rp/ale'
 
-" vim tsuquyomi
-Plug 'Quramy/tsuquyomi'
-
-" vimproc
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+" Prettier
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " colors for vim
 " Plug 'chriskempson/base16-vim'
