@@ -1,5 +1,4 @@
 source ~/.dotfiles/.vim_config/sets.vim
-source ~/.dotfiles/.vim_config/keymap.vim
 
 " All Plugins {{{
 " "========================================================
@@ -9,8 +8,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'cohama/lexima.vim'
 
 " typescript
-" Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
 
 " lightline
 Plug 'itchyny/lightline.vim'
@@ -54,10 +52,13 @@ Plug 'w0rp/ale'
 " Prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
+" vim-lsp
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+
 " colors for vim
 " Plug 'chriskempson/base16-vim'
-Plug 'nemesit/vim-colors-fukurokujopro'
-" Plug 'morhetz/gruvbox'
+" Plug 'nemesit/vim-colors-fukurokujopro'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 " Plug 'kristijanhusak/vim-hybrid-material'
@@ -78,5 +79,6 @@ filetype on
 source ~/.dotfiles/.vim_config/general.vim
 source ~/.dotfiles/.vim_config/style.vim
 source ~/.dotfiles/.vim_config/plugin_settings.vim
+source ~/.dotfiles/.vim_config/keymap.vim
 
 " vim:foldmethod=marker:foldlevel=0

@@ -97,4 +97,5 @@ set incsearch
 " for some wierd reason key I type is being shwon in status bar
 " this is for disable that
 set noshowcmd
+
 "}}}
