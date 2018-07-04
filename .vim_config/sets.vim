@@ -6,6 +6,7 @@ set modelines=1
 set nocompatible              " be iMproved, required
 filetype off                  " required
 syntax on
+set laststatus=2
 
 " set line number as relative as well as absolute
 set nu
