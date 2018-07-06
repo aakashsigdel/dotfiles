@@ -8,8 +8,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'cohama/lexima.vim'
 
 " typescript
-Plug 'leafgarland/typescript-vim'
-" Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 
 " lightline
 Plug 'itchyny/lightline.vim'

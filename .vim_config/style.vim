@@ -7,7 +7,7 @@ set background=dark
 
 " color base16-ocean
 colorscheme gruvbox
-" let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark = 'hard'
 " color dracula
 " colorscheme hybrid_material
 " colorscheme hybrid

@@ -9,17 +9,22 @@ module.exports = {
     updateChannel: "stable",
 
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 11,
 
     // font family with optional fallbacks
-    fontFamily:
-      'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: 'Menlo\ for\ Powerline, Monaco, "Courier New", monospace',
 
     // default font weight: 'normal' or 'bold'
-    fontWeight: "normal",
+    fontWeight: "100",
 
     // font weight for bold characters: 'normal' or 'bold'
-    fontWeightBold: "bold",
+    fontWeightBold: "normal",
+
+    // line height as a relative unit
+    lineHeight: 1.2,
+
+    // letter spacing as a relative unit
+    letterSpacing: 0,
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: "rgba(248,28,229,0.8)",
@@ -98,7 +103,7 @@ module.exports = {
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: "/usr/local/bin/zsh",
+    shell: "",
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
@@ -108,7 +113,7 @@ module.exports = {
     env: {},
 
     // set to `false` for no bell
-    bell: false,
+    bell: "SOUND",
 
     // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
     copyOnSelect: false,
@@ -132,7 +137,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyper-material-theme", "hyperterm-gruvbox-dark"],
+  plugins: ["hyperterm-gruvbox-dark"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -141,6 +146,6 @@ module.exports = {
 
   keymaps: {
     // Example
-    'window:devtools': 'cmd+alt+i',
+    "window:devtools": "cmd+alt+i"
   }
 };
