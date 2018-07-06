@@ -32,8 +32,7 @@ nmap <silent> <leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <leader>j <Plug>(ale_next_wrap)
 
 " TS LSP
-" autocmd FileType typescript,typescriptreact,typescript.tsx nnoremap <leader>h :LspHover<CR>
-" autocmd FileType typescript,typescriptreact,typescript.tsx nnoremap <F2> :LspRename<CR>
-" autocmd FileType typescript,typescriptreact,typescript.tsx nnoremap <F8> :LspReferences<CR>
-" autocmd FileType typescript,typescriptreact,typescript.tsx nnoremap <C-]> :ALEGoToDefinition<CR>
-" autocmd FileType typescript,typescriptreact,typescript.tsx command! ProjectSearch -nargs=1 vimgrep /<args>/gj ./**/*.ts<CR>
+nnoremap <leader>h :LspHover<CR>
+nnoremap <F2> :LspRename<CR>
+nnoremap <F8> :LspReferences<CR>
+nnoremap <C-]> :ALEGoToDefinition<CR>

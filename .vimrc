@@ -9,6 +9,7 @@ Plug 'cohama/lexima.vim'
 
 " typescript
 Plug 'leafgarland/typescript-vim'
+" Plug 'HerringtonDarkholme/yats.vim'
 
 " lightline
 Plug 'itchyny/lightline.vim'
@@ -60,6 +61,7 @@ Plug 'prabirshrestha/vim-lsp'
 " Plug 'chriskempson/base16-vim'
 " Plug 'nemesit/vim-colors-fukurokujopro'
 " Plug 'altercation/vim-colors-solarized'
+" Plug 'lifepillar/vim-solarized8'
 " Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 " Plug 'kristijanhusak/vim-hybrid-material'
 " Plug 'ajh17/Spacegray.vim'
