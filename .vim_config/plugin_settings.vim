@@ -51,7 +51,7 @@
           \ 'name': 'typescript-language-server',
           \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
           \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-          \ 'whitelist': ['typescript'],
+          \ 'whitelist': ['typescript', 'typescriptreact', 'typescript.tsx'],
           \ })
   endif
 
@@ -62,6 +62,14 @@
           \ 'whitelist': ['css', 'less', 'sass'],
           \ })
   endif
+" }}}
+
+" typescript source for asyncomplete.vim {{{
+call asyncomplete#register_source(asyncomplete#sources#tscompletejob#get_source_options({
+    \ 'name': 'tscompletejob',
+    \ 'whitelist': ['typescript', 'typescriptreact', 'typescript.tsx'],
+    \ 'completor': function('asyncomplete#sources#tscompletejob#completor'),
+    \ }))
 " }}}
 
 " ale.vim {{{
@@ -78,10 +86,12 @@
         \ }
   let g:ale_fixers = {
         \ 'javascript': ['prettier'],
-        \ 'typescript': ['prettier']
+        \ 'javascript.jsx': ['prettier'],
+        \ 'typescript': ['prettier'],
+        \ 'typescript.tsx': ['prettier'],
+        \ 'typescriptreact': ['prettier'],
         \ }
   let g:ale_fix_on_save = 1
-  let g:ale_sign_column_always = 1
   let g:ale_javascript_prettier_use_local_config = 1
   let g:ale_typescript_prettier_use_local_config = 1
   let g:ale_sign_error = '✖'

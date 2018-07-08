@@ -1,5 +1,4 @@
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-" Set VIM Options {{{
 " mode line tells vim to set for this file only
 " and equals to 1 tells vim to check last line for the settings
 set modelines=1
@@ -71,9 +70,6 @@ set ignorecase
 set smartcase
 
 " set sane timeouts
-" set notimeout
-" set ttimeout
-" set ttimeoutlen=10
 set timeoutlen=1000 ttimeoutlen=0
 
 " spell check
@@ -97,5 +93,3 @@ set incsearch
 " for some wierd reason key I type is being shwon in status bar
 " this is for disable that
 set noshowcmd
-
-"}}}

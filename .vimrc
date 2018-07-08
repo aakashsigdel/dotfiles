@@ -54,8 +54,12 @@ Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " vim-lsp
+Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'runoshun/tscompletejob'
+Plug 'prabirshrestha/asyncomplete-tscompletejob.vim'
 
 " colors for vim
 " Plug 'chriskempson/base16-vim'
