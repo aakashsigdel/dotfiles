@@ -6,13 +6,13 @@ module.exports = {
   config: {
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
-    updateChannel: "stable",
+    updateChannel: "canary",
 
     // default font size in pixels for all tabs
     fontSize: 11,
 
     // font family with optional fallbacks
-    fontFamily: 'Menlo\ for\ Powerline, Monaco, "Courier New", monospace',
+    fontFamily: 'Menlo for Powerline, Monaco, "Courier New", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: "100",
@@ -103,7 +103,7 @@ module.exports = {
     //
     // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
-    shell: "",
+    shell: "/usr/local/bin/zsh",
 
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used

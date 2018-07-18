@@ -30,6 +30,7 @@ nnoremap <BS> :TmuxNavigateLeft<CR>
 " ale
 nmap <silent> <leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <leader>j <Plug>(ale_next_wrap)
+nmap <silent> <leader>d <Plug>(ale_detail)
 
 " TS LSP
 nnoremap <leader>h :LspHover<CR>

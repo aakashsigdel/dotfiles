@@ -65,11 +65,11 @@
 " }}}
 
 " typescript source for asyncomplete.vim {{{
-call asyncomplete#register_source(asyncomplete#sources#tscompletejob#get_source_options({
-    \ 'name': 'tscompletejob',
-    \ 'whitelist': ['typescript', 'typescriptreact', 'typescript.tsx'],
-    \ 'completor': function('asyncomplete#sources#tscompletejob#completor'),
-    \ }))
+" call asyncomplete#register_source(asyncomplete#sources#tscompletejob#get_source_options({
+"     \ 'name': 'tscompletejob',
+"     \ 'whitelist': ['typescript', 'typescriptreact', 'typescript.tsx'],
+"     \ 'completor': function('asyncomplete#sources#tscompletejob#completor'),
+"     \ }))
 " }}}
 
 " ale.vim {{{
@@ -96,4 +96,5 @@ call asyncomplete#register_source(asyncomplete#sources#tscompletejob#get_source_
   let g:ale_typescript_prettier_use_local_config = 1
   let g:ale_sign_error = '✖'
   let g:ale_sign_warning = '⬥'
+  let g:ale_sign_column_always = 1
 " }}}

@@ -8,8 +8,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'cohama/lexima.vim'
 
 " typescript
-" Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
+" Plug 'HerringtonDarkholme/yats.vim'
 
 " lightline
 Plug 'itchyny/lightline.vim'
@@ -54,12 +54,12 @@ Plug 'w0rp/ale'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " vim-lsp
-Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'runoshun/tscompletejob'
-Plug 'prabirshrestha/asyncomplete-tscompletejob.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'runoshun/tscompletejob'
+" Plug 'prabirshrestha/asyncomplete-tscompletejob.vim'
 
 " colors for vim
 " Plug 'chriskempson/base16-vim'

@@ -1,7 +1,7 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/aakash/.oh-my-zsh
+export ZSH=/Users/aakashsigdel/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -96,4 +96,4 @@ export PATH=/usr/local/mysql/bin:$PATH
 eval $(thefuck --alias)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export NPM_TOKEN=f802d406-b3b7-4d1c-add5-61c1a4cc8eb3
+export NPM_TOKEN=a5f86bda-e402-4913-9f85-8ecf3d66a63b
