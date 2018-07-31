@@ -19,6 +19,7 @@ noremap <F5> :source $MYVIMRC<CR>
 
 " nerdtree mapping
 map <leader><CR> :NERDTreeToggle<CR>
+map <leader>q :NERDTreeFind<CR>
 
 " Fugitive mapping
 " map Gstatus
