@@ -84,9 +84,6 @@ export NVM_DIR="/Users/$LOGNAME/.nvm"
 # completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# fastlane
-export PATH="$HOME/.fastlane/bin:$PATH"
-
 
 #initialize Z (https://github.com/rupa/z) 
 . ~/z.sh 
@@ -97,3 +94,6 @@ eval $(thefuck --alias)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export NPM_TOKEN=a5f86bda-e402-4913-9f85-8ecf3d66a63b
+
+# FZF ripgrep default for vim
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
