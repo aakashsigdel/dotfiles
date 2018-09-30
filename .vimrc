@@ -9,7 +9,6 @@ Plug 'cohama/lexima.vim'
 
 " typescript
 Plug 'leafgarland/typescript-vim'
-" Plug 'HerringtonDarkholme/yats.vim'
 
 " lightline
 Plug 'itchyny/lightline.vim'
@@ -32,8 +31,9 @@ Plug 'christoomey/vim-tmux-navigator'
 " fugitive
 Plug 'tpope/vim-fugitive'
 
-" ctrlP
-Plug 'ctrlpvim/ctrlp.vim'
+" FZF
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Ag for vim
 Plug 'rking/ag.vim'
@@ -53,25 +53,7 @@ Plug 'w0rp/ale'
 " Prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
-" vim-lsp
-" Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-" Plug 'prabirshrestha/asyncomplete-lsp.vim'
-" Plug 'runoshun/tscompletejob'
-" Plug 'prabirshrestha/asyncomplete-tscompletejob.vim'
-
 " colors for vim
-" Plug 'chriskempson/base16-vim'
-" Plug 'nemesit/vim-colors-fukurokujopro'
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'lifepillar/vim-solarized8'
-" Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-" Plug 'kristijanhusak/vim-hybrid-material'
-" Plug 'ajh17/Spacegray.vim'
-" Plug 'NLKNguyen/papercolor-theme'
-" Plug 'w0ng/vim-hybrid'
-" Plug 'nightsense/vimspectr'
 Plug 'morhetz/gruvbox'
 
 " --------------------------------------------------------------

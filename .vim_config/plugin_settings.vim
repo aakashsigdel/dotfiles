@@ -3,38 +3,9 @@
 "}}}
 
 " Emmet Options {{{
-" Enabling just for html and css
+" Enabling just for html and css and js
   let g:user_emmet_install_global = 1
   autocmd FileType html,css,js EmmetInstall
-"}}}
-
-"CtrlP settings {{{
-  if exists("g:ctrlp_user_command")
-    unlet g:ctrlp_user_command
-  endif
-  if executable('ag')
-    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command =
-      \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
-
-    " ag is fast enough that CtrlP doesn't need to cache
-    let g:ctrlp_use_caching = 0
-  else
-    " Fall back to using git ls-files if Ag is not available
-    let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
-  endif
-
-  " Default to filename searches - so that appctrl will find application
-  " controller
-  "let g:ctrlp_by_filename = 1
-
-  " Don't jump to already open window. This is annoying if you are maintaining
-  " several Tab workspaces and want to open two windows into the same file.
-  let g:ctrlp_switch_buffer = 0
-
-  " find in buffer mapping
-  map <c-b> :CtrlPBuffer<CR>
 "}}}
 
 " NerdTree settings {{{
@@ -43,33 +14,6 @@
 
 " fugitive.vim {{{
   set diffopt+=vertical
-" }}}
-
-" language-servers {{{
-  if executable('typescript-language-server')
-      au User lsp_setup call lsp#register_server({
-          \ 'name': 'typescript-language-server',
-          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
-          \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-          \ 'whitelist': ['typescript', 'typescriptreact', 'typescript.tsx'],
-          \ })
-  endif
-
-  if executable('css-languageserver')
-      au User lsp_setup call lsp#register_server({
-          \ 'name': 'css-languageserver',
-          \ 'cmd': {server_info->[&shell, &shellcmdflag, 'css-languageserver --stdio']},
-          \ 'whitelist': ['css', 'less', 'sass'],
-          \ })
-  endif
-" }}}
-
-" typescript source for asyncomplete.vim {{{
-" call asyncomplete#register_source(asyncomplete#sources#tscompletejob#get_source_options({
-"     \ 'name': 'tscompletejob',
-"     \ 'whitelist': ['typescript', 'typescriptreact', 'typescript.tsx'],
-"     \ 'completor': function('asyncomplete#sources#tscompletejob#completor'),
-"     \ }))
 " }}}
 
 " ale.vim {{{
@@ -97,4 +41,19 @@
   let g:ale_sign_error = '✖'
   let g:ale_sign_warning = '⬥'
   let g:ale_sign_column_always = 1
+" }}}
+
+" fzf rg {{{
+  " --column: Show column number
+  " --line-number: Show line number
+  " --no-heading: Do not show file headings in results
+  " --fixed-strings: Search term as a literal string
+  " --ignore-case: Case insensitive search
+  " --no-ignore: Do not respect .gitignore, etc...
+  " --hidden: Search hidden files and folders
+  " --follow: Follow symlinks
+  " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+  " --color: Search color options
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+  let g:fzf_layout = { 'down': '~30%'  }
 " }}}
