@@ -41,3 +41,5 @@ nnoremap <C-]> :ALEGoToDefinition<CR>
 " FZF mapings
 map <c-p> :Files<CR>
 map <c-b> :Buffers<CR>
+
+noremap <silent> <leader>a<CR> :bufdo bw<CR>

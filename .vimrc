@@ -1,5 +1,8 @@
 source ~/.dotfiles/.vim_config/sets.vim
 
+let g:ale_virtualtext_cursor = 1
+let g:ale_completion_enabled = 1
+
 " All Plugins {{{
 " "========================================================
 call plug#begin('~/.vim/plugged')

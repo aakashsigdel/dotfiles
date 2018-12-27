@@ -90,8 +90,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 export PATH=/usr/local/mysql/bin:$PATH
 
-eval $(thefuck --alias)
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export NPM_TOKEN=a5f86bda-e402-4913-9f85-8ecf3d66a63b
 

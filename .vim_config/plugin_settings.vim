@@ -17,6 +17,8 @@
 " }}}
 
 " ale.vim {{{
+  let g:ale_completion_max_suggestions = 3
+  set completeopt=menu,menuone,noselect,noinsert
   let g:ale_linters = {'tsx': 'tsserver'}
   let g:ale_linter_aliases = {'tsx': ['ts', 'typescript'], 'typescriptreact': ['typescript']}
   let g:ale_linters = {
