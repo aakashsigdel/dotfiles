@@ -60,3 +60,13 @@
   command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
   let g:fzf_layout = { 'down': '~30%'  }
 " }}}
+
+" UltiSnips {{{
+  let g:UltiSnipsExpandTrigger = "<tab>"
+  let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+  let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+  let g:UltiSnipsSnippetsDir = $HOME."/.dotfiles/UltiSnips"
+  let g:UltiSnipsSnippetDirectories = ['UltiSnips', $HOME.'/.dotfiles/UltiSnips']
+  let g:UltiSnipsEnableSnipMate = 0
+  let g:UltiSnipsEditSplit="vertical"
+"}}}

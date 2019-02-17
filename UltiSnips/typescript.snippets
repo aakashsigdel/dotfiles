@@ -1,0 +1,24 @@
+snippet testJest
+import * as React from 'react'
+import { shallow, ShallowWrapper } from 'enzyme'
+import { Lean, I$1Props } from './${1}'
+
+describe('<$1 />', () => {
+  let wrapper: ShallowWrapper<I$1Props>
+  const defaultProps: I$1Props = {
+    $2
+  }
+
+  beforeEach(() => {
+    wrapper = shallow(<Lean$1 {...defaultProps} />)
+  })
+
+  afterEach(() => {
+    jest.resetAllMocks()
+  })
+
+  it('should ${3}', () => {
+    
+  })
+})
+endsnippet

@@ -62,6 +62,9 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 " elm plugin
 Plug 'elmcast/elm-vim'
 
+" UltiSnips
+Plug 'SirVer/ultisnips'
+
 " colors for vim
 Plug 'morhetz/gruvbox'
 
