@@ -25,6 +25,9 @@ Plug 'gregsexton/MatchTag'
 " NerdTree Plug
 Plug 'scrooloose/nerdtree'
 
+" Webapi
+Plug 'mattn/webapi-vim'
+
 " Emmet for vim
 Plug 'mattn/emmet-vim'
 
@@ -55,6 +58,9 @@ Plug 'w0rp/ale'
 
 " Prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+" elm plugin
+Plug 'elmcast/elm-vim'
 
 " colors for vim
 Plug 'morhetz/gruvbox'
