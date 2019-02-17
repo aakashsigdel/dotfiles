@@ -27,7 +27,7 @@ source $ZSH/oh-my-zsh.sh
 # vim aliases
 # ============
 alias vi="vim"
-# alias vim="nvim"
+alias vim="nvim"
 # ============
 
 # ============
