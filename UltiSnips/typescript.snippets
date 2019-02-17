@@ -36,3 +36,32 @@ describe('${1}', () => {
   })
 })
 endsnippet
+
+snippet fc
+import * as React from 'react'
+
+export interface I${1}Props {
+  ${2}
+}
+
+export const Lean$1:React.FC<I$1Props> = ({${3}}) => ${4:null}
+
+export const $1 = Lean$1
+endsnippet
+
+snippet component
+import * as React from 'react'
+
+export interface I${1}Props {
+  ${2}
+}
+
+export class Lean$1 extends React.Component<I$1Props> {
+  render() {
+    const {$3} = this.props
+    return ${4:null}
+  }
+}
+
+export const $1 = Lean$1
+endsnippet
