@@ -28,9 +28,6 @@ Plug 'gregsexton/MatchTag'
 " NerdTree Plug
 Plug 'scrooloose/nerdtree'
 
-" Webapi
-Plug 'mattn/webapi-vim'
-
 " Emmet for vim
 Plug 'mattn/emmet-vim'
 

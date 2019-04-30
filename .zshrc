@@ -13,9 +13,14 @@ plugins=(git brew npm zsh-syntax-highlighting)
 
 plugins=(fasd)
 
+
+# JAVA_HOME
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home"
+
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
 export PATH="/opt/local/bin:$PATH"
+export PATH=${JAVA_HOME}/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
