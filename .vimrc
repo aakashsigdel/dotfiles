@@ -19,6 +19,9 @@ Plug 'itchyny/lightline.vim'
 " jsx indentation and highlight
 Plug 'mxw/vim-jsx'
 
+" vue plugin syntax highlight
+Plug 'posva/vim-vue'
+
 " highlight ending html tag when pointing to the start
 Plug 'gregsexton/MatchTag'
 
