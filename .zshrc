@@ -15,7 +15,7 @@ plugins=(fasd)
 
 
 # JAVA_HOME
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home"
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
@@ -79,6 +79,7 @@ export EDITOR="$VISUAL"
 export ANDROID_HOME=${HOME}/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+export PATH="$PATH:${HOME}/flutter/bin"
 
 # ctrl + r in vim mode in shell
 bindkey '^r' history-incremental-search-backward

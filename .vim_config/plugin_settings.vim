@@ -22,8 +22,8 @@
   let g:ale_linters = {'tsx': 'tsserver'}
   let g:ale_linter_aliases = {'tsx': ['ts', 'typescript'], 'typescriptreact': ['typescript']}
   let g:ale_linters = {
-        \   'javascript': ['prettier', 'tsserver'],
-        \   'javascript.jsx': ['prettier', 'tsserver'],
+        \   'javascript': ['prettier', 'eslint'],
+        \   'javascript.jsx': ['prettier', 'eslint'],
         \   'typescript': ['prettier', 'tsserver', 'tslint'],
         \   'typescriptreact': ['prettier', 'tsserver', 'tslint'],
         \   'typescript.tsx': ['prettier', 'tsserver', 'tslint'],
@@ -68,4 +68,12 @@
   let g:UltiSnipsSnippetDirectories = ['UltiSnips', $HOME.'/.dotfiles/UltiSnips']
   let g:UltiSnipsEnableSnipMate = 0
   let g:UltiSnipsEditSplit="vertical"
+"}}}
+
+" Flutter {{{
+  nnoremap <leader>fa :FlutterRun<cr>
+  nnoremap <leader>fq :FlutterQuit<cr>
+  nnoremap <leader>fr :FlutterHotReload<cr>
+  nnoremap <leader>fR :FlutterHotRestart<cr>
+  nnoremap <leader>fD :FlutterVisualDebug<cr>
 "}}}

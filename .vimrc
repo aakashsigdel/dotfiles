@@ -65,6 +65,12 @@ Plug 'elmcast/elm-vim'
 " UltiSnips
 Plug 'SirVer/ultisnips'
 
+" Dart plugin
+Plug 'dart-lang/dart-vim-plugin'
+
+" Flutter plugin
+Plug 'thosakwe/vim-flutter'
+
 " colors for vim
 Plug 'morhetz/gruvbox'
 
