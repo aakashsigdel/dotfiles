@@ -2,47 +2,12 @@
   let g:jsx_ext_required = 0
 "}}}
 
-" Emmet Options {{{
-" Enabling just for html and css and js
-  let g:user_emmet_install_global = 1
-  autocmd FileType html,css,js EmmetInstall
-"}}}
-
 " NerdTree settings {{{
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "}}}
 
 " fugitive.vim {{{
   set diffopt+=vertical
-" }}}
-
-" ale.vim {{{
-  let g:ale_completion_max_suggestions = 3
-  set completeopt=menu,menuone,noselect,noinsert
-  let g:ale_linters = {'tsx': 'tsserver'}
-  let g:ale_linter_aliases = {'tsx': ['ts', 'typescript'], 'typescriptreact': ['typescript']}
-  let g:ale_linters = {
-        \   'javascript': ['prettier', 'eslint'],
-        \   'javascript.jsx': ['prettier', 'eslint'],
-        \   'typescript': ['prettier', 'tsserver', 'tslint'],
-        \   'typescriptreact': ['prettier', 'tsserver', 'tslint'],
-        \   'typescript.tsx': ['prettier', 'tsserver', 'tslint'],
-        \   'css': ['prettier'],
-        \   'json': ['prettier'],
-        \ }
-  let g:ale_fixers = {
-        \ 'javascript': ['prettier'],
-        \ 'javascript.jsx': ['prettier'],
-        \ 'typescript': ['prettier'],
-        \ 'typescript.tsx': ['prettier'],
-        \ 'typescriptreact': ['prettier'],
-        \ }
-  let g:ale_fix_on_save = 1
-  let g:ale_javascript_prettier_use_local_config = 1
-  let g:ale_typescript_prettier_use_local_config = 1
-  let g:ale_sign_error = '✖'
-  let g:ale_sign_warning = '⬥'
-  let g:ale_sign_column_always = 1
 " }}}
 
 " fzf rg {{{
@@ -60,20 +25,15 @@
   let g:fzf_layout = { 'down': '~30%'  }
 " }}}
 
-" UltiSnips {{{
-  let g:UltiSnipsExpandTrigger = "<tab>"
-  let g:UltiSnipsJumpForwardTrigger = "<c-j>"
-  let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-  let g:UltiSnipsSnippetsDir = $HOME."/.dotfiles/UltiSnips"
-  let g:UltiSnipsSnippetDirectories = ['UltiSnips', $HOME.'/.dotfiles/UltiSnips']
-  let g:UltiSnipsEnableSnipMate = 0
-  let g:UltiSnipsEditSplit="vertical"
-"}}}
+" coc.nvim {{{
+" Use <leader>h to show documentation in preview window
+  nnoremap <silent> <leader>h :call <SID>show_documentation()<CR>
 
-" Flutter {{{
-  nnoremap <leader>fa :FlutterRun<cr>
-  nnoremap <leader>fq :FlutterQuit<cr>
-  nnoremap <leader>fr :FlutterHotReload<cr>
-  nnoremap <leader>fR :FlutterHotRestart<cr>
-  nnoremap <leader>fD :FlutterVisualDebug<cr>
+  function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+      execute 'h '.expand('<cword>')
+    else
+      call CocAction('doHover')
+    endif
+  endfunction
 "}}}
