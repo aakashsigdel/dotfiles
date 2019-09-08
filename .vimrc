@@ -49,4 +49,4 @@ source ~/.dotfiles/.vim_config/general.vim
 source ~/.dotfiles/.vim_config/style.vim
 source ~/.dotfiles/.vim_config/plugin_settings.vim
 source ~/.dotfiles/.vim_config/keymap.vim
-
+let g:coc_global_extensions=['coc-tsserver', 'coc-flow', 'coc-css', 'coc-prettier', 'coc-yaml', 'coc-json', 'coc-html']
