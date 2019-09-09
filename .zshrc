@@ -15,7 +15,7 @@ plugins=(fasd)
 
 
 # JAVA_HOME
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home"
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
