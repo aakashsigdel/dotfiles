@@ -42,6 +42,8 @@ nmap <silent> <C-]> <Plug>(coc-definition)
 nmap <silent> <leader>t <Plug>(coc-type-definition)
 nmap <silent> <leader>i <Plug>(coc-implementation)
 nmap <silent> <leader>r <Plug>(coc-references)
+nmap <silent> <leader>j <Plug>(coc-diagnostic-next-error)
+nmap <silent> <leader>k <Plug>(coc-diagnostic-prev-error)
 
 " code actions
 nmap <silent> <leader>ca  <Plug>(coc-codeaction)
@@ -50,3 +52,4 @@ nmap <leader>af <Plug>(coc-fix-current)
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
+

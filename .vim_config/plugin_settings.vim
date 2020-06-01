@@ -26,7 +26,7 @@
 " }}}
 
 " coc.nvim {{{
-" Use <leader>h to show documentation in preview window
+  " Use <leader>h to show documentation in preview window
   nnoremap <silent> <leader>h :call <SID>show_documentation()<CR>
 
   function! s:show_documentation()
@@ -36,4 +36,8 @@
       call CocAction('doHover')
     endif
   endfunction
+
+  " snippets
+  inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : 
+                                           \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 "}}}

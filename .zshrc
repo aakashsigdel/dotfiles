@@ -9,18 +9,21 @@ export ZSH="/Users/$LOGNAME/.oh-my-zsh"
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-plugins=(git brew npm zsh-syntax-highlighting)
-
-plugins=(fasd)
+plugins=(git brew npm)
+plugins+=(fasd)
+plugins+=(yarn-completion)
 
 
 # JAVA_HOME
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home"
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
 export PATH="/opt/local/bin:$PATH"
 export PATH=${JAVA_HOME}/bin:$PATH
+export PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
+export PATH=~/tizen-studio/tools/ide/bin:$PATH
+export PATH=~/tizen-studio/tools:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,3 +104,4 @@ export NPM_TOKEN=a5f86bda-e402-4913-9f85-8ecf3d66a63b
 
 # FZF ripgrep default for vim
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+export PATH="/usr/local/opt/ruby/bin:$PATH"

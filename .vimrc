@@ -39,6 +39,12 @@ Plug 'tpope/vim-surround'
 " coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" nvim-lsp
+" Plug 'neovim/nvim-lsp'
+
+" documentation generator
+Plug 'kkoomen/vim-doge'
+
 " colors for vim
 Plug 'morhetz/gruvbox'
 Plug 'ayu-theme/ayu-vim'
@@ -50,3 +56,4 @@ source ~/.dotfiles/.vim_config/style.vim
 source ~/.dotfiles/.vim_config/plugin_settings.vim
 source ~/.dotfiles/.vim_config/keymap.vim
 let g:coc_global_extensions=['coc-tsserver', 'coc-flow', 'coc-css', 'coc-prettier', 'coc-yaml', 'coc-json', 'coc-html']
+" lua require'nvim_lsp'.tsserver.setup{}
