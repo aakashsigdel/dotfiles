@@ -24,6 +24,9 @@ export PATH=${JAVA_HOME}/bin:$PATH
 export PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
 export PATH=~/tizen-studio/tools/ide/bin:$PATH
 export PATH=~/tizen-studio/tools:$PATH
+export PATH=~/tizen-studio/tools/emulator/bin:$PATH
+export PATH="$ANDROID_HOME/emulator:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -41,7 +44,7 @@ alias vim="nvim"
 # ============
 # tmux aliases
 # ============
-alias tmux="tmux -2"
+# alias tmux="tmux -2"
 # ============
 
 # ============
@@ -52,7 +55,7 @@ alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall 
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias lh="ls -d .*"
 alias ip="ifconfig | grep 192"
-alias mux="tmuxinator"
+# alias mux="tmuxinator"
 alias fh-dump="MONGO_R_PASSWORD=Yp42hveNU95n5GsC bin/dump_data_graph.rb production development"
 # ============
 
