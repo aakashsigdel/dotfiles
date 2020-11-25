@@ -15,18 +15,22 @@ plugins+=(yarn-completion)
 
 
 # JAVA_HOME
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home"
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
 export PATH="/opt/local/bin:$PATH"
 export PATH=${JAVA_HOME}/bin:$PATH
-export PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH=/usr/local/lib/ruby/gems/2.7.0/bin:$PATH
 export PATH=~/tizen-studio/tools/ide/bin:$PATH
 export PATH=~/tizen-studio/tools:$PATH
 export PATH=~/tizen-studio/tools/emulator/bin:$PATH
 export PATH="$ANDROID_HOME/emulator:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
 
 source $ZSH/oh-my-zsh.sh
 
