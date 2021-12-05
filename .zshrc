@@ -15,7 +15,7 @@ plugins+=(yarn-completion)
 
 
 # JAVA_HOME
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/Contents/Home
 
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
@@ -28,6 +28,7 @@ export PATH=~/tizen-studio/tools:$PATH
 export PATH=~/tizen-studio/tools/emulator/bin:$PATH
 export PATH="$ANDROID_HOME/emulator:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH=/Library/PostgreSQL/14/bin:$PATH
 
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
@@ -112,3 +113,14 @@ export NPM_TOKEN=a5f86bda-e402-4913-9f85-8ecf3d66a63b
 # FZF ripgrep default for vim
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH=/opt/homebrew/bin:/usr/local/opt/ruby/bin:/usr/local/mysql/bin:/Users/aakashsigdel/.nvm/versions/node/v16.5.0/bin:/usr/local/opt/mysql@5.7/bin:/emulator:/Users/aakashsigdel/tizen-studio/tools/emulator/bin:/Users/aakashsigdel/tizen-studio/tools:/Users/aakashsigdel/tizen-studio/tools/ide/bin:/usr/local/lib/ruby/gems/2.7.0/bin:/usr/local/opt/ruby/bin:/bin:/opt/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/aakashsigdel/Library/Android/sdk/tools:/Users/aakashsigdel/Library/Android/sdk/platform-tools:/Users/aakashsigdel/flutter/bin:/Users/aakashsigdel/.fzf/bin
+
+# tabtab source for yarn package
+# uninstall by removing these lines or running `tabtab uninstall yarn`
+[[ -f /Users/aakashsigdel/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh ]] && . /Users/aakashsigdel/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+# export SDKMAN_DIR="/Users/aakashsigdel/.sdkman"
+# [[ -s "/Users/aakashsigdel/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/aakashsigdel/.sdkman/bin/sdkman-init.sh"
+
+# GPG keys
+export GPG_TTY=$(tty)

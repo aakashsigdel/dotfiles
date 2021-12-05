@@ -4,6 +4,7 @@
 
 " NerdTree settings {{{
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  let g:NERDTreeWinPos = "right"
 "}}}
 
 " fugitive.vim {{{
@@ -22,7 +23,7 @@
   " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
   " --color: Search color options
   command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
-  let g:fzf_layout = { 'down': '~30%'  }
+  let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 " }}}
 
 " coc.nvim {{{
@@ -40,4 +41,34 @@
   " snippets
   inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : 
                                            \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"}}}
+
+" tree-sitter.nvim {{{
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    disable = {},
+  },
+  indent = {
+    enable = false,
+    disable = {},
+  },
+  ensure_installed = {
+    "tsx",
+    "html",
+    "css",
+    "yaml",
+    "swift",
+    "java",
+    "bash",
+    "json"
+  }
+}
+EOF
+"}}}
+
+" vim-gutentags {{{
+let g:gutentags_ctags_exclude = ["*.min.js", "*.min.css", "build", "vendor", ".git", "node_modules", "*.vim/bundle/*", "Pods", "ios", "android"]
+let g:gutentags_cache_dir= "~/.cache/tags"
 "}}}

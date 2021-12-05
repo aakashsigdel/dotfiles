@@ -64,7 +64,9 @@ syntax sync maxlines=240
 set synmaxcol=900
 
 " set fold method to indent *fdm=syntax makes vim slow
-set fdm=indent
+" set fdm=indent
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 set foldlevel=0
 
 " set case insensitive search
@@ -95,3 +97,9 @@ set incsearch
 " for some wierd reason key I type is being shwon in status bar
 " this is for disable that
 set noshowcmd
+
+" remove tilde ~ character from empty lines
+let &fcs='eob: '
+
+" split line as dotted pipes
+set fillchars+=vert:\|

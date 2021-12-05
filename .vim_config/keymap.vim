@@ -32,6 +32,10 @@ nnoremap <BS> :TmuxNavigateLeft<CR>
 " FZF mapings
 map <c-p> :Files<CR>
 map <c-b> :Buffers<CR>
+map <c-g><c-s> :GFiles?<CR>
+map <c-g><c-h> :BCommits<CR>
+map <c-i> :BLines<CR>
+map <c-t> :BTags<CR>
 
 noremap <silent> <leader>a<CR> :bufdo bw<CR>
 
@@ -45,8 +49,13 @@ nmap <silent> <leader>r <Plug>(coc-references)
 nmap <silent> <leader>j <Plug>(coc-diagnostic-next-error)
 nmap <silent> <leader>k <Plug>(coc-diagnostic-prev-error)
 
+" scroll float popup
+noremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+
 " code actions
-nmap <silent> <leader>ca  <Plug>(coc-codeaction)
+command! -nargs=? Fix     :call CocActionAsync('codeAction', '')
+nmap <silent> <leader>ca :Fix<CR>
 nmap <silent> <leader>as  <Plug>(coc-codeaction-selected)
 nmap <leader>af <Plug>(coc-fix-current)
 
