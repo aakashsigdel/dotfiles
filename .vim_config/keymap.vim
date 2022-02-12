@@ -62,3 +62,10 @@ nmap <leader>af <Plug>(coc-fix-current)
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
+" arduino
+" =========
+nnoremap <buffer> <leader>am <cmd>ArduinoVerify<CR>
+nnoremap <buffer> <leader>au <cmd>ArduinoUpload<CR>
+nnoremap <buffer> <leader>ad <cmd>ArduinoUploadAndSerial<CR>
+nnoremap <buffer> <leader>ab <cmd>ArduinoChooseBoard<CR>
+nnoremap <buffer> <leader>ap <cmd>ArduinoChooseProgrammer<CR>
