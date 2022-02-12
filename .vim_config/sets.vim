@@ -77,7 +77,7 @@ set smartcase
 set timeoutlen=1000 ttimeoutlen=0
 
 " spell check
-setlocal spell spelllang=en_us
+" setlocal spell spelllang=en_us
 
 " assume the /g flag on :s substitutions to replace all matches in a line
 set gdefault
