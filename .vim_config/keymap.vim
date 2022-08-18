@@ -33,9 +33,9 @@ nnoremap <BS> :TmuxNavigateLeft<CR>
 map <c-p> :Files<CR>
 map <c-b> :Buffers<CR>
 map <c-g><c-s> :GFiles?<CR>
-map <c-g><c-h> :BCommits<CR>
-map <c-i> :BLines<CR>
-map <c-t> :BTags<CR>
+" nnoremap <c-p> <cmd>Telescope find_files<cr>
+" nnoremap <c-b> <cmd>Telescope buffers<cr>
+" nnoremap <leader>f <cmd>Telescope live_grep<cr>
 
 noremap <silent> <leader>a<CR> :bufdo bw<CR>
 
