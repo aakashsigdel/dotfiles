@@ -1,8 +1,48 @@
 " vim-jsx option to enable for js files too
   let g:jsx_ext_required = 0
 
-" NerdTree settings
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" neo tree
+lua << EOF
+require("neo-tree").setup({
+        close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+        popup_border_style = "rounded",
+        enable_git_status = true,
+        enable_diagnostics = true,
+        default_component_configs = {
+          container = {
+            enable_character_fade = true
+          },
+          modified = {
+            symbol = "[+]",
+            highlight = "NeoTreeModified",
+          },
+          name = {
+            use_git_status_colors = true,
+            highlight = "NeoTreeFileName",
+          },
+          git_status = {
+            symbols = {
+              -- Change type
+              deleted   = "✖",-- this can only be used in the git_status source
+              renamed   = "",-- this can only be used in the git_status source
+              -- Status type
+              untracked = "",
+              ignored   = "",
+              unstaged  = "",
+              staged    = "",
+              conflict  = "",
+            }
+          },
+        },
+        filesystem = {
+          filtered_items = {
+            visible = false, -- when true, they will just be displayed differently than normal items
+            hide_dotfiles = true,
+            hide_gitignored = false,
+          },
+        },
+      })
+EOF
 
 " fugitive.vim
   set diffopt+=vertical
@@ -13,26 +53,30 @@
 
 " telescope.nvim
 lua << EOF
--- local actions = require('telescope.actions')
--- require('telescope').setup({
---   defaults = {
---     -- Default configuration for telescope goes here:
---     -- config_key = value,
---     mappings = {
---       i = {
---         ["<ESC>"]   = actions.close,
---       }
---     }
---   },
---   pickers = {
---     buffers = {
---       sort_lastused = true
---     }
---   }
--- })
+local actions = require('telescope.actions')
+require('telescope').setup({
+  defaults = {
+    -- Default configuration for telescope goes here:
+    -- config_key = value,
+    mappings = {
+      i = {
+        ["<esc>"] = require('telescope.actions').close,
+      },
+      n = {
+        ["<esc>"] = require('telescope.actions').close,
+      },
+    }
+  },
+  pickers = {
+    buffers = {
+      sort_lastused = true
+    }
+  }
+})
 EOF
 
 " coc.nvim
+  let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-html', 'coc-css', 'coc-json', 'coc-prettier', 'coc-svg', 'coc-tsserver', 'coc-yaml', 'coc-marketplace', 'coc-eslint', 'coc-diagnostic']
   " Use <leader>h to show documentation in preview window
   nnoremap <silent> <leader>h :call <SID>show_documentation()<CR>
 
@@ -45,8 +89,9 @@ EOF
   endfunction
 
   " snippets
-  inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : 
-                                           \"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+  inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 
 " tree-sitter.nvim
 lua <<EOF
