@@ -37,6 +37,7 @@ vim.cmd [[
   set foldexpr=nvim_treesitter#foldexpr()
   set foldlevel=0
   set foldlevelstart=99
+  set nofoldenable
 
   set hlsearch
   set ignorecase

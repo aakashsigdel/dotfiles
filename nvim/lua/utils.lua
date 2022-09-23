@@ -16,12 +16,12 @@ function M.concat_tables(t1, t2)
   return t1
 end
 
-function M.map(mode, mapping, command, opts)
+function M.map(mode, lhs, rhs, opts)
     local options = { noremap = true }
     if opts then
         options = vim.tbl_extend("force", options, opts)
     end
-    vim.api.nvim_set_keymap(mode, mapping, command, options)
+    vim.keymap.set(mode, lhs, rhs, options)
 end
 
 return M

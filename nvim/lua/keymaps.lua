@@ -1,4 +1,5 @@
 local map = require('utils').map
+local wiki = require('modules.vimwiki')
 
 map('n', '<leader>n', ':nohlsearch<CR>')
 map('n', '<space>', 'za')
@@ -15,3 +16,4 @@ map('n', '<c-b>', '<cmd>Telescope buffers<cr>')
 map('n', '<leader>f', '<cmd>Telescope live_grep<cr>')
 
 map('n', '<leader>gs', ':Gstatus<CR>')
+map('n', '<leader>pp', wiki.open_project_wiki)
