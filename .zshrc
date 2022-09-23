@@ -10,24 +10,22 @@ source $ZSH/oh-my-zsh.sh
 
 export VISUAL=nvim
 export EDITOR="$VISUAL"
-export ANDROID_HOME=${HOME}/Library/Android/sdk
-export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/Contents/Home
-export LDFLAGS="-L/usr/local/opt/ruby/lib"
-export CPPFLAGS="-I/usr/local/opt/ruby/include"
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
 export PATH="/opt/local/bin:$PATH"
-export PATH=${JAVA_HOME}/bin:$PATH
-export PATH="$ANDROID_HOME/emulator:$PATH"
-export PATH=/Library/PostgreSQL/14/bin:$PATH
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export PATH=~/.fzf/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 
 alias vi="vim"
 alias vim="nvim"
 alias ip="ifconfig | grep 192"
+alias tmux="tmux -2"
+alias gs="git status"
+alias ga="git add"
+alias gl="git log"
+alias gc="git commit -m"
+alias gck="git checkout"
+alias gp="git push origin"
 
 
 set -o vi
