@@ -1,6 +1,6 @@
 local M = {}
 
-function M.concat_tables(t1, t2)
+function M.extend(t1, t2)
   if t1 == nil and t2 == nil then
     return {}
   end
@@ -10,18 +10,23 @@ function M.concat_tables(t1, t2)
   if t2 == nil then
     return t1
   end
-  for i=1,#t2 do
-    t1[#t1+1] = t2[i]
-  end
-  return t1
+  return vim.tbl_extend('force', t1, t2)
 end
 
 function M.map(mode, lhs, rhs, opts)
-    local options = { noremap = true }
-    if opts then
-        options = vim.tbl_extend("force", options, opts)
-    end
-    vim.keymap.set(mode, lhs, rhs, options)
+  local options = { noremap = true }
+  if opts then
+      options = vim.tbl_extend("force", options, opts)
+  end
+  vim.keymap.set(mode, lhs, rhs, options)
+end
+
+function M.alert(message)
+  require('notify')(message, "info", {title = "Alert"}, 'warn')
+end
+
+function M.show_default_statusline()
+  vim.cmd("set statusline=")
 end
 
 return M

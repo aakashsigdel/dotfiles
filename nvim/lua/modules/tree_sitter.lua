@@ -7,14 +7,14 @@ opt.foldexpr = "nvim_treesitter#foldexpr()"
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
-    disable = {},
   },
   indent = {
     enable = false,
-    disable = {},
   },
   ensure_installed = {
+    "typescript",
     "tsx",
+    "javascript",
     "html",
     "css",
     "yaml",

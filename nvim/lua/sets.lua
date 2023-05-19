@@ -1,15 +1,15 @@
-vim.cmd [[
-  syntax enable
-  set termguicolors
-  set background=light
-  colorscheme melange
-]]
+vim.opt.syntax = 'enable'
+vim.opt.termguicolors = true
+vim.o.winbar = "%{%v:lua.require('modules/winbar').eval()%}"
 
 vim.cmd [[
   syntax on
   set laststatus=2
   set hidden
   filetype plugin indent on
+
+  set title
+  set laststatus=0
 
   let mapleader=","
 

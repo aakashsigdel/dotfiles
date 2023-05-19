@@ -1,39 +1,25 @@
-# Colors (Solarized Light)
-colors:
-  primary:
-    foreground: '#6B5C4D'
-    background: '#F4F0ED'
-  normal:
-    black:   '#E9E1DB'
-    red:     '#D7898C'
-    green:   '#83B887'
-    yellow:  '#C29830'
-    blue:    '#485F84'
-    magenta: '#BE79BB'
-    cyan:    '#729893'
-    white:   '#A38D78'
-  bright:
-    black:   '#DED2C8'
-    red:     '#C65333'
-    green:   '#659E69'
-    yellow:  '#C29830'
-    blue:    '#485F84'
-    magenta: '#854882'
-    cyan:    '#436460'
-    white:   '#867462'
- 
+import:
+ - ~/.config/alacritty/themes/colors/base16-one-light.yml
 font:
   normal:
-    family: MonoLisa Nerd Font
-  size: 13
+    family: Zed Nerd Font
+    style: Regular
+  bold:
+    style: Semibold
+  size: 14
   offset:
     y: 6
-    x: 0
+    x: 1
  
 window:
+  decorations: buttonless
   padding:
     x: 4
-    y: 4
+    y: 0
 
 env:
   TERM: xterm-256color
+
+key_bindings:
+  - { key: Return,   mods: Shift,   chars: "\x1b[13;2u" }
+  - { key: Return,   mods: Control, chars: "\x1b[13;5u" }
