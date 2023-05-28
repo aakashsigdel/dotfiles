@@ -10,14 +10,25 @@ return require('packer').startup(
       'neovim/nvim-lspconfig'
     }
 
+    -- bufferline
+    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+
+    -- dap
+    use 'mfussenegger/nvim-dap'
+
+    -- lua
+    use 'folke/neodev.nvim'
+
     use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
     use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
-    use 'L3MON4D3/LuaSnip' -- Snippets plugin
-    use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
     use 'onsails/lspkind-nvim'
     use 'jose-elias-alvarez/typescript.nvim'
+
+    use 'L3MON4D3/LuaSnip' -- Snippets plugin
+    use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+    use "rafamadriz/friendly-snippets"
 
     use 'euclidianAce/BetterLua.vim'
     use 'leafgarland/typescript-vim'
@@ -32,7 +43,7 @@ return require('packer').startup(
     use 'tpope/vim-repeat'
     use 'ggandor/lightspeed.nvim'
     use 'vimwiki/vimwiki'
-    use 'jiangmiao/auto-pairs'
+    use 'echasnovski/mini.pairs'
     use 'rcarriga/nvim-notify'
     use {
       'akinsho/git-conflict.nvim',

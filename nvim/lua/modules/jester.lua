@@ -1,14 +1,12 @@
 local map = require('utils').map
 local jester = require('jester')
 
-local dir = vim.fn.expand('%:p')
+-- remove the file name form the $file path and cd into that dir; then cut the extension from file name before running test
+cmd_run_file = "cd `sed 's/\\/[^/]*$//' <<< $file`" .. " && yarn jest `echo $file | cut -f 1 -d '.'`"
+cmd_run = cmd_run_file .. " -t '$result'"
+cmd_watch = cmd_run_file .. ' --watch'
 
--- remove the file name form the $file path and cd into that dir
-cmd = "cd `sed 's/\\/[^/]*$//' <<< $file`" .. " && yarn jest --testPathPattern=$file -t '$result'"
-
-jester.setup({
-  cmd = cmd,
-})
-
-map('n', '<leader>jf', jester.run_file)
-map('n', '<leader>jr', jester.run)
+map('n', '<leader>jf', function() jester.run_file({cmd = cmd_run_file}) end)
+map('n', '<leader>jr', function() jester.run({cmd = cmd_run}) end)
+map('n', '<leader>jw', function() jester.run_file({ cmd = cmd_watch }) end)
+map('n', '<leader>jt', function() jester.terminate() end)

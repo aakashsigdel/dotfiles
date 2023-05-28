@@ -1,6 +1,6 @@
 vim.opt.syntax = 'enable'
 vim.opt.termguicolors = true
-vim.o.winbar = "%{%v:lua.require('modules/winbar').eval()%}"
+-- vim.o.winbar = "%{%v:lua.require('modules/winbar').eval()%}"
 
 vim.cmd [[
   syntax on

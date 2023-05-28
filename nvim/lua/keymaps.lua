@@ -16,3 +16,4 @@ map('n', '<leader>h', '<cmd>Telescope git_files<cr>')
 
 map('n', '<leader>gs', ':Gstatus<CR>')
 map('n', '<leader>rv', ':source ~/.config/nvim/init.lua<CR>')
+map('t', '<C-[>', [[<C-\><C-n>]])
