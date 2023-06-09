@@ -2,26 +2,29 @@ local builtin = require('telescope.builtin')
 local utils = require('utils')
 local typescript = require('typescript')
 local extend = utils.extend
--- local coq = require('coq')
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
+local rounded_border = {border = 'rounded'}
 
 local goto_next = function(severity)
+  local options = extend({ float = rounded_border}, {severity = severity})
   return function (opts)
     return severity == nil
       and vim.diagnostic.goto_next(opts)
-      or vim.diagnostic.goto_next(extend({severity = severity}, opts))
+      or vim.diagnostic.goto_next(extend(options, opts))
   end
 end
 
 local goto_prev = function(severity)
+  local options = extend({ float = rounded_border}, {severity = severity})
   return function (opts)
     return severity == nil
       and vim.diagnostic.goto_prev(opts)
-      or vim.diagnostic.goto_prev(extend({severity = severity}, opts))
+      or vim.diagnostic.goto_prev(extend(options, opts))
   end
 end
+
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, rounded_border)
 
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
@@ -36,10 +39,10 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', 'gr', builtin.lsp_references, opts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', '<leader>h', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', '<leader>i', vim.lsp.buf.implementation, bufopts)
 end
 
 local on_attach_ts = function(_, bufnr)
@@ -59,6 +62,23 @@ require("typescript").setup({
     on_attach = on_attach_ts
   }
 })
+
+require'lspconfig'.eslint.setup{}
+
+require'lspconfig'.lua_ls.setup {
+  server = {
+    capabilities = capabilities,
+    on_attach = on_attach
+  },
+  settings = {
+    Lua = {
+      runtime = { version = 'LuaJIT' },
+      diagnostics = { globals = {'vim'} },
+      workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+      telemetry = { enable = false },
+    },
+  },
+}
 
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
@@ -96,3 +116,4 @@ require'cmp'.setup.filetype('gitcommit', {
     { name = 'buffer' },
   })
 })
+
