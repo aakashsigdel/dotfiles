@@ -30,9 +30,8 @@ local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '<leader>k', goto_prev(vim.diagnostic.severity.ERROR), opts)
 vim.keymap.set('n', '<leader>j', goto_next(vim.diagnostic.severity.ERROR), opts)
-vim.keymap.set('n', '<leader>wk', goto_prev(vim.diagnostic.severity.HINT), opts)
-vim.keymap.set('n', '<leader>wj', goto_next(vim.diagnostic.severity.HINT), opts)
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '<leader>wk', goto_prev({max = vim.diagnostic.severity.WARN}), opts)
+vim.keymap.set('n', '<leader>wj', goto_next({max = vim.diagnostic.severity.WARN}), opts)
 
 local on_attach = function(_, bufnr)
   local bufopts = { noremap=true, silent=true, buffer=bufnr }

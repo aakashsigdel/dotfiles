@@ -38,7 +38,7 @@ require("telescope").setup({
     find_files = utils.extend({previewer = false}, fixfolds),
     git_files = fixfolds,
     grep_string = fixfolds,
-    live_grep = fixfolds,
+    live_grep = utils.extend(fixfolds, {additional_args = function(opts) return {"--hidden"} end}),
   }
 })
 
