@@ -104,14 +104,6 @@ return require('packer').startup(
         end
       }
 
-    use ({
-      'RRethy/nvim-base16',
-      config = function()
-        vim.cmd([[
-          colorscheme base16-one-light
-          set background=light
-        ]])
-      end
-    })
+    use 'RRethy/nvim-base16'
   end
 )

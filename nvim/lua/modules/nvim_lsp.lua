@@ -9,18 +9,14 @@ local rounded_border = {border = 'rounded'}
 local goto_next = function(severity)
   local options = extend({ float = rounded_border}, {severity = severity})
   return function (opts)
-    return severity == nil
-      and vim.diagnostic.goto_next(opts)
-      or vim.diagnostic.goto_next(extend(options, opts))
+    return vim.diagnostic.goto_next(extend(options, opts))
   end
 end
 
 local goto_prev = function(severity)
   local options = extend({ float = rounded_border}, {severity = severity})
   return function (opts)
-    return severity == nil
-      and vim.diagnostic.goto_prev(opts)
-      or vim.diagnostic.goto_prev(extend(options, opts))
+    return vim.diagnostic.goto_prev(extend(options, opts))
   end
 end
 
