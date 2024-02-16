@@ -12,6 +12,7 @@ vim.cmd [[
   set laststatus=0
 
   let mapleader=","
+  let maplocalleader="-"
 
   set undofile
   set undodir=$HOME/.vim/undo

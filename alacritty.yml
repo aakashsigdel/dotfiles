@@ -1,5 +1,5 @@
 import:
- - ~/.config/alacritty/themes/colors/base16-one-light.yml
+ - ~/.config/alacritty/themes/colors/base16-onedark.yml
 font:
   normal:
     family: MesloLGM Nerd Font Mono

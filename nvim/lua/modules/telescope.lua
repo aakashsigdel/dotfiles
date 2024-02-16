@@ -1,6 +1,7 @@
 local utils = require('utils')
 local telescope_actions = require('telescope.actions.set')
 local action_layout = require("telescope.actions.layout")
+local builtin = require('telescope.builtin')
 
 pcall(require('telescope').load_extension, 'fzf')
 
@@ -41,6 +42,20 @@ require("telescope").setup({
     live_grep = utils.extend(fixfolds, {additional_args = function(opts) return {"--hidden"} end}),
   }
 })
+
+local telescope_last = 0
+local function telescope_resume()
+  if telescope_last == 0 then
+    telescope_last = 1
+    builtin.live_grep()
+  else
+    builtin.resume()
+  end
+end
+
+-- Keymaps --
+vim.keymap.set("n", "<c-p>", telescope_resume)
+vim.keymap.set("n", "<leader>f", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 
 require("telescope").load_extension("ui-select")
 require('telescope').load_extension('env')

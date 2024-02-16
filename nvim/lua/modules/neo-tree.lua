@@ -8,6 +8,14 @@ vim.fn.sign_define("DiagnosticSignHint",
   {text = "h", texthl = "DiagnosticSignHint"})
 
 require("neo-tree").setup({
+  filesystem = {
+    window = {
+      mappings = {
+        -- disable fuzzy finder 
+        ["/"] = "noop"
+      }
+    }
+  },
   default_component_configs = {
     git_status = {
       symbols = {

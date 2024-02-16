@@ -19,6 +19,9 @@ return require('packer').startup(
     -- lua
     use 'folke/neodev.nvim'
 
+    -- HCL
+    use 'hashivim/vim-terraform'
+
     use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
     use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
     use 'hrsh7th/cmp-buffer'
@@ -79,9 +82,17 @@ return require('packer').startup(
     use 'nvim-treesitter/playground'
 
     -- Telesope.nvim
+    use {
+      "nvim-telescope/telescope.nvim",
+      requires = {
+        { "nvim-telescope/telescope-live-grep-args.nvim" },
+      },
+      config = function()
+        require("telescope").load_extension("live_grep_args")
+      end
+    }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
     use {'nvim-telescope/telescope-ui-select.nvim' }
     use { "LinArcX/telescope-env.nvim" }
 
@@ -105,5 +116,21 @@ return require('packer').startup(
       }
 
     use 'RRethy/nvim-base16'
+
+    -- Neorg
+    use {
+    "nvim-neorg/neorg",
+    config = function()
+        require('neorg').setup {
+            load = {
+                ["core.defaults"] = {},
+                ["core.concealer"] = {},
+                ["core.dirman"] = { config = { workspaces = { notes = "~/notes" } } },
+            },
+        }
+    end,
+    run = ":Neorg sync-parsers",
+    requires = "nvim-lua/plenary.nvim",
+  }
   end
 )

@@ -1,6 +1,7 @@
 local builtin = require('telescope.builtin')
 local utils = require('utils')
 local typescript = require('typescript')
+local nvim_lsp = require('lspconfig')
 local extend = utils.extend
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -58,9 +59,14 @@ require("typescript").setup({
   }
 })
 
-require'lspconfig'.eslint.setup{}
+nvim_lsp.denols.setup {
+  on_attach = on_attach,
+  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+}
 
-require'lspconfig'.lua_ls.setup {
+nvim_lsp.eslint.setup{}
+
+nvim_lsp.lua_ls.setup {
   server = {
     capabilities = capabilities,
     on_attach = on_attach
@@ -112,3 +118,4 @@ require'cmp'.setup.filetype('gitcommit', {
   })
 })
 
+require'lspconfig'.terraformls.setup{}

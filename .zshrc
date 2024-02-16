@@ -6,6 +6,10 @@ ZSH_THEME="robbyrussell"
 plugins=(git brew npm fnm)
 plugins+=(fasd)
 fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit
+compinit -u
+
 source $ZSH/oh-my-zsh.sh
 
 export VISUAL=nvim
@@ -18,6 +22,11 @@ export PATH=/opt/homebrew/bin:$PATH
 export PATH=/usr/local/mysql-8.0.31-macos12-arm64/bin:$PATH
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="/Users/aakashsigdel/Downloads:$PATH"
+export PATH="~/bin:$PATH"
+
+# ----- Android ----
+export ANDROID_HOME=/Users/$USER/Library/Android/sdk
+export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 
 # ---
 alias ip="ifconfig | grep 192"
@@ -36,6 +45,17 @@ alias gl="git log"
 alias gcm="git commit -m"
 alias gck="git checkout"
 alias gpl="git pull origin"
+alias gpo="git push origin"
+
+# ------ cURL -----
+alias cgt="curl -X GET"
+alias cpt="curl -X POST"
+cjs() {
+    curl -X POST $1 -H 'Content-Type: application/json' -d $2
+}
+# -----------
+
+alias tat="tmux at -t"
 
 alias y="yarn"
 alias yw="yarn workspace"
@@ -48,12 +68,6 @@ bindkey '^r' history-incremental-search-backward
 # 10ms timeout for key sequences
 KEYTIMEOUT=1
 
-# export NVM_DIR="/Users/$LOGNAME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-#
-# nvm alias arm stable
-# nvm alias intel 16
-
 #initialize zoxide
 eval "$(zoxide init zsh)"
 
@@ -64,13 +78,15 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 # GPG keys
 export GPG_TTY=$(tty)
 
+# TOKENS
+NPM_TOKEN=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
+GH_TOKEN=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
+
 # export VOLTA_HOME="$HOME/.volta"
 # export PATH="$VOLTA_HOME/bin:$PATH"
 eval "$(fnm env --use-on-cd)"
 
 # temp flags
-export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 eval export PATH="/Users/aakashsigdel/.jenv/shims:${PATH}"
 export JENV_SHELL=zsh
 export JENV_LOADED=1
@@ -93,3 +109,10 @@ jenv() {
     command jenv "$command" "$@";;
   esac
 }
+
+eval "$(starship init zsh)"
+
+# Shopify Hydrogen alias to local projects
+alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
+
+# eval "$(~/bin/rtx activate zsh)"

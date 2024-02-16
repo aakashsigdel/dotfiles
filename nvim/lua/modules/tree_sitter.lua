@@ -31,9 +31,9 @@ require'nvim-treesitter.configs'.setup {
       [';'] = 'textsubjects-container-outer',
       ['i;'] = 'textsubjects-container-inner',
     },
-  },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
   }
+}
+require('ts_context_commentstring').setup {
+  enable = true,
+  enable_autocmd = false,
 }

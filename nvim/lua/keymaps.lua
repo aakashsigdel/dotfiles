@@ -11,9 +11,11 @@ map('n', '<leader>q', '<cmd>Neotree reveal<CR>', {silent = true})
 
 map('n', '<c-p>', '<cmd>Telescope find_files<cr>')
 map('n', '<c-b>', '<cmd>Telescope buffers<cr>')
-map('n', '<leader>f', '<cmd>Telescope live_grep<cr>')
+-- map('n', '<leader>f', '<cmd>Telescope live_grep<cr>')
 map('n', '<leader>h', '<cmd>Telescope git_files<cr>')
 
 map('n', '<leader>gs', ':Gstatus<CR>')
 map('n', '<leader>rv', ':source ~/.config/nvim/init.lua<CR>')
 map('t', '<C-[>', [[<C-\><C-n>]])
+
+map('n', '<leader>o', ':%bd<CR><C-o>')
