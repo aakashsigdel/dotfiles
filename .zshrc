@@ -78,10 +78,6 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 # GPG keys
 export GPG_TTY=$(tty)
 
-# TOKENS
-NPM_TOKEN=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
-GH_TOKEN=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
-
 # export VOLTA_HOME="$HOME/.volta"
 # export PATH="$VOLTA_HOME/bin:$PATH"
 eval "$(fnm env --use-on-cd)"
