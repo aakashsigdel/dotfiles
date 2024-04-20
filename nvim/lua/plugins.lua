@@ -10,6 +10,8 @@ return require('packer').startup(
       'neovim/nvim-lspconfig'
     }
 
+    use 'vim-scripts/BufOnly.vim'
+
     -- bufferline
     use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 
@@ -116,21 +118,5 @@ return require('packer').startup(
       }
 
     use 'RRethy/nvim-base16'
-
-    -- Neorg
-    use {
-    "nvim-neorg/neorg",
-    config = function()
-        require('neorg').setup {
-            load = {
-                ["core.defaults"] = {},
-                ["core.concealer"] = {},
-                ["core.dirman"] = { config = { workspaces = { notes = "~/notes" } } },
-            },
-        }
-    end,
-    run = ":Neorg sync-parsers",
-    requires = "nvim-lua/plenary.nvim",
-  }
   end
 )
